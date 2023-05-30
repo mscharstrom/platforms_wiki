@@ -29,7 +29,7 @@ kube-node-lease   Active   24s
 
 <br>
 
-### Important
+### :warning:
 > If you do not have the ~/.kube folder available you can proceed with the following steps, if you already have a ~/.kube/config where you connect to an already available cluster you might want to setup aliases in your ~/.bash_profile file to switch between different clusters. Please read further down for these instructions.
 ###
 
@@ -43,6 +43,8 @@ $ sudo k3s kubectl config view --raw | tee ~/.kube/config
 $ chmod 600 ~/.kube/config
 ```
 
+<br>
+
 Now, lets point KUBECONFIG to the new config file `$ export KUBECONFIG=~/.kube/config`.
 When running `kubectl get ns` you should now see this:
 
@@ -54,10 +56,15 @@ kube-public       Active   13m
 kube-node-lease   Active   13m
 ```
 
+<br>
+
 ### Aliases for different configs
 
 If you have different ~/.kube/configs or are in need of it, you can put your different config files under the ~/.kube/<folder>/config and point create aliases in your ~/.bash_aliases (or equivalent) to point KUBECONFIG to these different files.
 
-`alias local-test='export KUBECONFIG=$HOME/.kube/local/local-test-config`
+<br>
   
- 
+`alias local-test-conf='export KUBECONFIG=$HOME/.kube/local/local-test-config`
+
+
+

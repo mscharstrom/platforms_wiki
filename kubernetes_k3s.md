@@ -83,7 +83,7 @@ If you wish to uninstall k3s with its other tools installed by the first script,
 
 <br>
   
-If you created the ~/.kube config you migt want to remove that folder as well.
+Also, if you created the ~/.kube config you migt want to remove that folder as well. But be careful so that you don't delete any config files that you might need.
 
 `rm -rf ~/.kube`
 

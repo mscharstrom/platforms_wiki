@@ -1,7 +1,7 @@
 # Installing k3s and configuring kubectl from scratch
+*The main purpose of writing this documentation is for my own learning.*
 
-k3s offers a simple way of installing its cluster with kubectl and other handy tools. Please read their own material [here](https://docs.k3s.io/quick-start).
-By using k3s provided install script we also get kubectl installed (along with crictl, ctr, k3s-killall.sh, and k3s-uninstall.sh).
+k3s offers a simple way of installing its cluster with kubectl and other handy tools. Please read their own material [here](https://docs.k3s.io/quick-start). Most of the information written here can be found on this [source](https://www.baeldung.com/ops/k3s-getting-started). By using k3s provided install script we also get kubectl installed (along with crictl, ctr, k3s-killall.sh, and k3s-uninstall.sh).
 
 <br>
 
@@ -29,7 +29,7 @@ kube-node-lease   Active   24s
 
 <br>
 
-### :warning:
+### :warning: Warning
 > If you do not have the ~/.kube folder available you can proceed with the following steps, if you already have a ~/.kube/config where you connect to an already available cluster you might want to setup aliases in your ~/.bash_profile file to switch between different clusters. Please read further down for these instructions.
 ###
 
@@ -58,13 +58,15 @@ kube-node-lease   Active   13m
 
 <br>
 
-### Aliases for different configs
+### :information_source: Aliases for different configs
 
-If you have different ~/.kube/configs or are in need of it, you can put your different config files under the ~/.kube/<folder>/config and point create aliases in your ~/.bash_aliases (or equivalent) to point KUBECONFIG to these different files.
+If you have different ~/.kube/configs or are in need of it, you can put your different config files under the ~/.kube/<folder>/ and create aliases in your ~/.bash_aliases (or equivalent) to point KUBECONFIG to these files.
 
 <br>
   
-`alias local-test-conf='export KUBECONFIG=$HOME/.kube/local/local-test-config`
-
+```
+alias local-test-conf='export KUBECONFIG=$HOME/.kube/local)/local-test-config`
+alias local-prod-conf='export KUBECONFIG=$HOME/.kube/local)/local-prod-config`
+```
 
 

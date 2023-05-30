@@ -2,21 +2,16 @@
 
 k3s offers a simple way of installing its cluster with kubectl and other handy tools. Please read their own material [here](https://docs.k3s.io/quick-start).
 
-
 By using k3s provided install script we also get kubectl installed (along with crictl, ctr, k3s-killall.sh, and k3s-uninstall.sh).
-
 
 `$ curl -sfL https://get.k3s.io | sh -`
 
-
 If we try and run `$ kubectl get ns` or something equivalent you'll notice that we can't access any cluster.
-
 
 ```
 WARN[0000] Unable to read /etc/rancher/k3s/k3s.yaml, please start server with --write-kubeconfig-mode to modify kube config permissions
 error: unknown command "client" for "kubectl"
 ```
-
 
 But, if we run it with sudo `$ sudo kubectl get ns` we should be able to see our cluster:
 ```
@@ -25,14 +20,11 @@ default           Active   24s
 kube-system       Active   24s
 kube-public       Active   24s
 kube-node-lease   Active   24s
-```. 
+```
 
-
->If you do not have the ~/.kube folder available you can proceed with the following steps, if you already have a ~/.kube/config where you connect to an already available cluster you might want to setup aliases in your ~/.bash_profile file to switch between different clusters. Please read further down for these instructions.*. 
-
+If you do not have the ~/.kube folder available you can proceed with the following steps, if you already have a ~/.kube/config where you connect to an already available cluster you might want to setup aliases in your ~/.bash_profile file to switch between different clusters. Please read further down for these instructions.
 
 With the default installation, k3s will place its config file for the cluster on this location '/etc/rancher/k3s/k3s.yaml', lets create the config file where k8 is looking per default instead.
-
 
 ```
 $ mkdir -p ~/.kube

@@ -70,10 +70,10 @@ kube-node-lease   Active   13m
 If you have different ~/.kube/configs or are in need of it, you can put your different config files under the ~/.kube/<folder>/ and create aliases in your ~/.bash_aliases (or equivalent) to point KUBECONFIG to these files.
 
 <br>
-  
+
 ```
-alias local-test-conf='export KUBECONFIG=$HOME/.kube/local)/local-test-config`
-alias local-prod-conf='export KUBECONFIG=$HOME/.kube/local)/local-prod-config`
+alias local-test-conf='export KUBECONFIG=$HOME/.kube/local/local-test-config`
+alias local-prod-conf='export KUBECONFIG=$HOME/.kube/local/local-prod-config`
 ```
 
 ## Uninstalling

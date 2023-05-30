@@ -22,6 +22,7 @@ error: unknown command "client" for "kubectl"
 
 But, if we run it with sudo `$ sudo kubectl get ns` we should be able to see our cluster:
 ```
+$ sudo kubectl get ns
 NAME              STATUS   AGE
 default           Active   24s
 kube-system       Active   24s
@@ -89,4 +90,3 @@ If you created the ~/.kube config you migt want to remove that folder as well.
 <br>
 
 EOF
-  

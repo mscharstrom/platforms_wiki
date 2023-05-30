@@ -47,10 +47,14 @@ $ chmod 600 ~/.kube/config
 
 <br>
 
-Now, lets point KUBECONFIG to the new config file `$ export KUBECONFIG=~/.kube/config`.
+Now, lets point KUBECONFIG to the new config file:
+
+`$ export KUBECONFIG=~/.kube/config`
+
 When running `kubectl get ns` you should now see this:
 
 ```
+$ kubectl get ns
 NAME              STATUS   AGE
 default           Active   13m
 kube-system       Active   13m

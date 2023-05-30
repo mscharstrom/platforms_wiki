@@ -1,4 +1,4 @@
-# Installing k3s and configuring kubectl
+# Installing k3s and configuring kubectl from scratch
 
 k3s offers a simple way of installing its cluster with kubectl and other handy tools.
 Please read their own material [here](https://docs.k3s.io/quick-start).
@@ -14,7 +14,7 @@ WARN[0000] Unable to read /etc/rancher/k3s/k3s.yaml, please start server with --
 error: unknown command "client" for "kubectl"
 ```
 
-If we run it with sudo `$ sudo kubectl get ns` we should be able to see our cluster:
+But, if we run it with sudo `$ sudo kubectl get ns` we should be able to see our cluster:
 ```
 NAME              STATUS   AGE
 default           Active   24s
@@ -22,3 +22,26 @@ kube-system       Active   24s
 kube-public       Active   24s
 kube-node-lease   Active   24s
 ```
+
+**Important**
+> If you do not have the ~/.kube folder available you can proceed with the following steps, if you already have a ~/.kube/config where you connect to an already available cluster you might want to setup aliases in your ~/.bash_profile file to switch between different clusters. Please read further down for these instructions.
+
+With the default installation, k3s will place its config file for the cluster on this location '/etc/rancher/k3s/k3s.yaml', lets create the config file where k8 is looking per default instead.
+
+```
+$ mkdir -p ~/.kube
+$ sudo k3s kubectl config view --raw | tee ~/.kube/config
+$ chmod 600 ~/.kube/config
+```
+
+Now, lets point KUBECONFIG to the new config file `$ export KUBECONFIG=~/.kube/config`.
+When running `kubectl get ns` you should now see this:
+
+```
+NAME              STATUS   AGE
+default           Active   13m
+kube-system       Active   13m
+kube-public       Active   13m
+kube-node-lease   Active   13m
+```
+

@@ -22,10 +22,9 @@ kube-public       Active   24s
 kube-node-lease   Active   24s
 ```
 
-## **Important**
+### Important
 > If you do not have the ~/.kube folder available you can proceed with the following steps, if you already have a ~/.kube/config where you connect to an already available cluster you might want to setup aliases in your ~/.bash_profile file to switch between different clusters. Please read further down for these instructions.
-
-##
+###
 
 With the default installation, k3s will place its config file for the cluster on this location '/etc/rancher/k3s/k3s.yaml', lets create the config file where k8 is looking per default instead.
 

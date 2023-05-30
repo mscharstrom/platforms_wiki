@@ -73,11 +73,13 @@ alias local-prod-conf='export KUBECONFIG=$HOME/.kube/local)/local-prod-config`
 
 ## Uninstalling
 If you wish to uninstall k3s with its other tools installed by the first script, simply run:
+
 `$ k3s-uninstall.sh`
 
 <br>
   
 If you created the ~/.kube config you migt want to remove that folder as well.
+
 `rm -rf ~/.kube`
 
 <br>

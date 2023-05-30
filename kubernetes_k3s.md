@@ -60,7 +60,7 @@ kube-node-lease   Active   13m
 
 <br>
 
-### :information_source: Aliases for different configs
+## :information_source: Aliases for different configs
 
 If you have different ~/.kube/configs or are in need of it, you can put your different config files under the ~/.kube/<folder>/ and create aliases in your ~/.bash_aliases (or equivalent) to point KUBECONFIG to these files.
 
@@ -71,8 +71,8 @@ alias local-test-conf='export KUBECONFIG=$HOME/.kube/local)/local-test-config`
 alias local-prod-conf='export KUBECONFIG=$HOME/.kube/local)/local-prod-config`
 ```
 
-### Uninstalling
-If you are done with this first test of installing and wish to uninstall k3s with its other tools installed, simply run:
+## Uninstalling
+If you wish to uninstall k3s with its other tools installed by the first script, simply run:
 `$ k3s-uninstall.sh`
 
 <br>
@@ -81,6 +81,6 @@ If you created the ~/.kube config you migt want to remove that folder as well.
 `rm -rf ~/.kube`
 
 <br>
-  
+
 EOF
   

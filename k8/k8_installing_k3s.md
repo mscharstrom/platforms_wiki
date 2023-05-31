@@ -1,7 +1,7 @@
 # Installing k3s and configuring kubectl
 *The main purpose of this documentation is for my own learning.*
 
-k3s offers a simple way of installing its cluster with kubectl and other handy tools. Please read their own material [here](https://docs.k3s.io/quick-start). By using k3s provided install script we also get kubectl installed (along with crictl, ctr, k3s-killall.sh, and k3s-uninstall.sh). Most of the information written here can be found on this [source](https://www.baeldung.com/ops/k3s-getting-started). 
+k3s offers a simple way of installing its cluster with kubectl and other handy tools. Please read their own material [here](https://docs.k3s.io/quick-start). By using k3s provided install script we also get kubectl installed (along with crictl, ctr, k3s-killall.sh, and k3s-uninstall.sh). Most of the information written here can be found on this [source](https://www.baeldung.com/ops/k3s-getting-started).
 
 <br>
 
@@ -109,6 +109,7 @@ $ sudo k3s kubectl create -f https://raw.githubusercontent.com/kubernetes/dashbo
 ```
 
 Now create two files for RBAC configuration:
+
 :warning: > This will give the user `admin-user` administrative privileges in the dashboard.
 
 dashboard.admin-user.yml:  

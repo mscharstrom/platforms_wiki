@@ -110,7 +110,8 @@ $ sudo k3s kubectl create -f https://raw.githubusercontent.com/kubernetes/dashbo
 
 Now create two files for RBAC configuration:
 
-:warning: > This will give the user `admin-user` administrative privileges in the dashboard.
+### :warning: Warning
+> This will give the user `admin-user` administrative privileges in the dashboard.
 
 dashboard.admin-user.yml:  
 ```

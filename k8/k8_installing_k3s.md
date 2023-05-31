@@ -108,12 +108,14 @@ $ VERSION_KUBE_DASHBOARD=$(curl -w '%{url_effective}' -I -L -s -S ${GITHUB_URL}/
 $ sudo k3s kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/${VERSION_KUBE_DASHBOARD}/aio/deploy/recommended.yaml
 ```
 
-Now create two files for RBAC configuration:
+<br>
+
+### :warning: Warning
+> The following steps will give the user `admin-user` administrative privileges in the dashboard.
 
 <br>
-  
-### :warning: Warning
-> This will give the user `admin-user` administrative privileges in the dashboard.
+
+Now create two files for RBAC configuration:
 
 <br>
 
@@ -176,3 +178,8 @@ kubernetes-dashboard   NodePort   10.43.137.241   <none>        443:30205/TCP   
 <br>
 
 Now open a browser and go to `https://your-server-ip:port`, as in my example the port is 30205.
+Enter your token bearer code which you obtained earlier.  
+
+
+EOF
+

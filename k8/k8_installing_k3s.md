@@ -166,5 +166,5 @@ It should look something like this:
 NAME                   TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)         AGE
 kubernetes-dashboard   NodePort   10.43.137.241   <none>        443:30205/TCP   42m
 ```
-
-Now open a browser and go to <your-server-ip>:<port>, as in my example the port is 30205.
+<br>
+Now open a browser and go to `https://<your-server-ip>:<port>`, as in my example the port is 30205.

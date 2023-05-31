@@ -150,6 +150,8 @@ Now deploy the admin-user configuration:
 
 `$ sudo k3s kubectl create -f dashboard.admin-user.yml -f dashboard.admin-user-role.yml`
 
+<br>
+
 Obtain the bearer token which we'll need in a later stage:
 
 `$ sudo k3s kubectl -n kubernetes-dashboard create token admin-user`
@@ -158,7 +160,7 @@ Obtain the bearer token which we'll need in a later stage:
 
 In order to reach the dashboard from our laptop/pc we need to edit the kubernetes-dashboard service:
 
-`$ kubectl -n kube-system edit service kubernetes-dashboard`
+`$ kubectl -n kubernetes-dashboard edit service kubernetes-dashboard`
   
 Find "type: ClusterIP" and change it to "type: NodePort" and save the file.
 
@@ -181,7 +183,7 @@ Now open a browser and go to `https://your-server-ip:port`, as in my example the
 Enter your token bearer code which you obtained earlier.  
 
 
-## Removing RBAC configuration
+### Removing RBAC configuration
 If you'd like to delete the RBAC configuration you made, enter the following command:
 
 `sudo k3s kubectl delete -f dashboard.admin-user.yml -f dashboard.admin-user-role.yml`

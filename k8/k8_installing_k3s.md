@@ -110,8 +110,12 @@ $ sudo k3s kubectl create -f https://raw.githubusercontent.com/kubernetes/dashbo
 
 Now create two files for RBAC configuration:
 
+<br>
+  
 ### :warning: Warning
 > This will give the user `admin-user` administrative privileges in the dashboard.
+
+<br>
 
 dashboard.admin-user.yml:  
 ```
@@ -121,6 +125,8 @@ metadata:
   name: admin-user
   namespace: kubernetes-dashboard
 ```
+  
+<br>
 
 dashboard.admin-user-role.yml  
 ```
@@ -166,5 +172,7 @@ It should look something like this:
 NAME                   TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)         AGE
 kubernetes-dashboard   NodePort   10.43.137.241   <none>        443:30205/TCP   42m
 ```
+
 <br>
-Now open a browser and go to `https://<your-server-ip>:<port>`, as in my example the port is 30205.
+
+Now open a browser and go to `https://your-server-ip:port`, as in my example the port is 30205.

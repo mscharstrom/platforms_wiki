@@ -8,8 +8,8 @@ I'm running a nuc (NUC11PAHi7) with Ubuntu (22.04.2 LTS) at home as my homelab e
 ## :link: Contents 
 
 ### Kubernetes (k8)
-- (Installing k3s and configuring kubectl)[https://github.com/mscharstrom/platforms_wiki/blob/main/k8/k8_installing_k3s.md]
+- [Installing k3s and configuring kubectl](https://github.com/mscharstrom/platforms_wiki/blob/main/k8/k8_installing_k3s.md)
 
 ### Nginx
-- (Redirect http -> https and set up SSL)[https://github.com/mscharstrom/platforms_wiki/blob/main/nginx/nginx_redirect_ssl.md]
-- (example.com.conf file)[https://github.com/mscharstrom/platforms_wiki/blob/main/nginx/example.com.conf]
+- [Redirect http -> https and set up SSL](https://github.com/mscharstrom/platforms_wiki/blob/main/nginx/nginx_redirect_ssl.md)
+- [example.com.conf file](https://github.com/mscharstrom/platforms_wiki/blob/main/nginx/example.com.conf)

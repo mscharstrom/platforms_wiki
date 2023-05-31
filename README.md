@@ -12,4 +12,4 @@ I'm running a nuc (NUC11PAHi7) with Ubuntu (22.04.2 LTS) at home as my homelab e
 
 ### Nginx
 - [Redirect http -> https and set up SSL](https://github.com/mscharstrom/platforms_wiki/blob/main/nginx/nginx_redirect_ssl.md)
-- [example.com.conf file](https://github.com/mscharstrom/platforms_wiki/blob/main/nginx/example.com.conf)
+  - [example.com.conf file](https://github.com/mscharstrom/platforms_wiki/blob/main/nginx/example.com.conf)

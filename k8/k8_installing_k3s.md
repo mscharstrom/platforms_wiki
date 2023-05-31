@@ -66,6 +66,8 @@ kube-node-lease   Active   13m
 Since I don't want to write `$ export KUBECONFIG=~/.kube/config` each time I log in on my server, I will add an alias in my ~/.bash_aliases file.
 
 `alias k3cluster="export KUBECONFIG=~/.kube/config"`
+
+
 `$ source ~/.bash_aliases`
 
 All I have to do to connect to the k3s cluster is now to write k3cluster in my terminal.

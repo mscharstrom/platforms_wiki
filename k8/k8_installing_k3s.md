@@ -181,5 +181,12 @@ Now open a browser and go to `https://your-server-ip:port`, as in my example the
 Enter your token bearer code which you obtained earlier.  
 
 
+## Removing RBAC configuration
+If you'd like to delete the RBAC configuration you made, enter the following command:
+
+`sudo k3s kubectl delete -f dashboard.admin-user.yml -f dashboard.admin-user-role.yml`
+
+<br>
+
 EOF
 

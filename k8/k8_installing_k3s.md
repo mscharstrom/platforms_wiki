@@ -98,4 +98,52 @@ Also, if you created the ~/.kube config you migt want to remove that folder as w
 
 <br>
 
-EOF
+# Setup kubernetes-dashboard
+For the fun of it, lets also add kubernetes-dashboard (who knows, maybe we'll find it useful in the future).
+
+Start by deploying it:
+```
+$ GITHUB_URL=https://github.com/kubernetes/dashboard/releases
+$ VERSION_KUBE_DASHBOARD=$(curl -w '%{url_effective}' -I -L -s -S ${GITHUB_URL}/latest -o /dev/null | sed -e 's|.*/||')
+$ sudo k3s kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/${VERSION_KUBE_DASHBOARD}/aio/deploy/recommended.yaml
+```
+
+Now create two files for RBAC configuration:
+:warning: > This will give the user `admin-user` administrative privileges in the dashboard.
+
+dashboard.admin-user.yml:  
+```
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin-user
+  namespace: kubernetes-dashboard
+```
+
+dashboard.admin-user-role.yml  
+```
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: admin-user
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: admin-user
+  namespace: kubernetes-dashboard
+```  
+
+Now deploy the admin-user configuration:
+
+`$ sudo k3s kubectl create -f dashboard.admin-user.yml -f dashboard.admin-user-role.yml`
+
+Obtain the bearer token which we'll need in a later stage:
+`$ sudo k3s kubectl -n kubernetes-dashboard create token admin-user`
+
+In order to reach the dashboard from our laptop/pc we need to edit the kubernetes-dashboard service:
+
+`$ kubectl -n kube-system edit service kubernetes-dashboard`
+

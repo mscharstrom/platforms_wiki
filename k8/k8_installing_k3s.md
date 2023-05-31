@@ -190,7 +190,8 @@ If you'd like to delete the RBAC configuration you made, enter the following com
 
 <br>
 
-WIP:
+**WIP:**
+
 Set up certs:
 
 Create secrets: kubectl create secret generic kubernetes-dashboard-certs --from-file=$HOME/certs -n kubernetes-dashboard

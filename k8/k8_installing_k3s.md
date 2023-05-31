@@ -190,28 +190,5 @@ If you'd like to delete the RBAC configuration you made, enter the following com
 
 <br>
 
-**WIP:**
-
-Set up certs:
-
-Create secrets: kubectl create secret generic kubernetes-dashboard-certs --from-file=$HOME/certs -n kubernetes-dashboard
-
-edit deployment:
-kubectl edit deployment kubernetes-dashboard -n kubernetes-dashboard
-
-```
-      containers:
-      - args:
-        - --tls-cert-file=/tls.crt
-        - --tls-key-file=/tls.key
-```
-
-Sources:
-  
-https://github.com/kubernetes/dashboard/blob/master/docs/user/installation.md#recommended-setup
-
-https://sondnpt00343.medium.com/deploying-a-publicly-accessible-kubernetes-dashboard-v2-0-0-betax-8e39680d4067
-
-
 EOF
 

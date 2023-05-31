@@ -207,8 +207,10 @@ kubectl edit deployment kubernetes-dashboard -n kubernetes-dashboard
 ```
 
 Sources:
+  
 https://github.com/kubernetes/dashboard/blob/master/docs/user/installation.md#recommended-setup
 
+https://sondnpt00343.medium.com/deploying-a-publicly-accessible-kubernetes-dashboard-v2-0-0-betax-8e39680d4067
 
 
 EOF

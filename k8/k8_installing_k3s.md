@@ -143,9 +143,28 @@ Now deploy the admin-user configuration:
 `$ sudo k3s kubectl create -f dashboard.admin-user.yml -f dashboard.admin-user-role.yml`
 
 Obtain the bearer token which we'll need in a later stage:
+
 `$ sudo k3s kubectl -n kubernetes-dashboard create token admin-user`
+
+<br>
 
 In order to reach the dashboard from our laptop/pc we need to edit the kubernetes-dashboard service:
 
 `$ kubectl -n kube-system edit service kubernetes-dashboard`
+  
+Find "type: ClusterIP" and change it to "type: NodePort" and save the file.
 
+<br>
+
+Then check which port the dashboard is exposed on:
+
+`$ kubectl -n kubernetes-dashboard get service kubernetes-dashboard`
+
+It should look something like this:  
+
+```
+NAME                   TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)         AGE
+kubernetes-dashboard   NodePort   10.43.137.241   <none>        443:30205/TCP   42m
+```
+
+Now open a browser and go to <your-server-ip>:<port>, as in my example the port is 30205.

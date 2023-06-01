@@ -207,8 +207,6 @@ openssl x509 -req -sha256 -days 365 -in tls.csr -signkey tls.key -out tls.crt
 
 Now create the secrets:
 
-<br>
-
 `create secret generic kubernetes-dashboard-certs --from-file=$HOME/certs/ -n kubernetes-dashboard`
 
 <br>

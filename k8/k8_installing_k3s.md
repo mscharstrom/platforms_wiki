@@ -189,6 +189,43 @@ If you'd like to delete the RBAC configuration you made, enter the following com
 `sudo k3s kubectl delete -f dashboard.admin-user.yml -f dashboard.admin-user-role.yml`
 
 <br>
+  
+## Adding certificates
+
+If you like you can create self signed certificates and add to your kubernetes dashboard deployment. They won't probably be recognized by your browser, but as a practice it can still be good. I'm using openssl to create these (in my ~/certs folder):
+
+<br>
+
+```
+openssl genrsa -out tls.key 2048
+openssl rsa -in tls.key -out tls.key
+openssl req -sha256 -new -key tls.key -out tls.csr -subj '/CN=localhost'
+openssl x509 -req -sha256 -days 365 -in tls.csr -signkey tls.key -out tls.crt
+```
+
+<br>
+
+Now create the secrets:
+
+<br>
+
+`create secret generic kubernetes-dashboard-certs --from-file=$HOME/certs/ -n kubernetes-dashboard`
+
+<br>
+
+Now edit the deployment and under container.args add the arguments for your certificates:
+  
+`kubectl edit deployment kubernetes-dashboard -n kubernetes-dashboard`
+
+```
+args:
+  - --tls-cert-file=/tls.crt
+  - --tls-key-file=/tls.key
+  - --auto-generate-certificates    < you can choose to keep or remove this
+```
+
+<br>
+
 
 EOF
 

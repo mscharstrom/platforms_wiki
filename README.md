@@ -3,7 +3,7 @@ Notes and personal guides for keeping up with platforms dev. I will try to write
 Some stuff might get outdated with time.
 
 ## :computer: My setup 
-I'm running a nuc (NUC11PAHi7) with Ubuntu (22.04.2 LTS) at home as my homelab environment. 
+I'm running a nuc with RockyOS at home as my homelab environment. 
 
 ## :link: Contents 
 
